@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+
+  db:
+    image: postgres:16
+    container_name: souli-db
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  backend:
+    build:
+      context: ./souli-backend
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./souli-backend:/app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${DB_NAME}
+      SPRING_DATASOURCE_USERNAME: ${DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+      SPRING_LIQUIBASE_ENABLED: "true"
+
+  frontend:
+    build:
+      context: ./souli-web
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./souli-web:/app
+      - /app/node_modules
+    ports:
+      - "4200:4200"
+
+volumes:
+  db_data:

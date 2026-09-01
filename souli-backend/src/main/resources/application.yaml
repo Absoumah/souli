@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: souli-backend
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/master.xml
+
+cors:
+  allowed-origins:
+    - ${CORS_ALLOWED_ORIGIN:http://localhost:4200}
+
+jwt:
+  secret: ${JWT_SECRET}
+  access-token-expiration: 3600
