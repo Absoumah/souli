@@ -29,6 +29,7 @@ services:
       SPRING_DATASOURCE_USERNAME: ${DB_USER}
       SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
       SPRING_LIQUIBASE_ENABLED: "true"
+      JWT_SECRET: ${JWT_SECRET}
 
   frontend:
     build:
