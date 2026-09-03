@@ -6,6 +6,7 @@ import com.souli.souli_backend.users.domain.User;
 import com.souli.souli_backend.users.domain.dto.UserDto;
 import com.souli.souli_backend.users.mapper.UserMapper;
 import com.souli.souli_backend.users.repository.UserRepository;
+import com.souli.souli_backend.users.service.EmailService;
 import com.souli.souli_backend.users.service.UserService;
 import com.souli.souli_backend.users.service.UserValidatorService;
 import lombok.AllArgsConstructor;
@@ -18,11 +19,14 @@ public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
     private final UserRepository userRepository;
     private final UserValidatorService userValidatorService;
+    private final EmailService emailService;
 
     public UserDto register(RegisterRequestDto registerRequestDto) {
         userValidatorService.verifyCreation(registerRequestDto);
         User created = userRepository.save(userMapper.registerDtoToEntity(registerRequestDto));
-        
+
+        emailService.sendRegistrationConfirmation(created);
+
         return userMapper.entityToUserDto(created);
     }
 }

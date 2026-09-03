@@ -23,11 +23,24 @@ public class JwtService {
     }
 
     public String generateToken(UserDetails userDetails) {
+        return generateToken(userDetails, "access", jwtProperties.getAccessTokenExpiration());
+    }
+
+    public String generateRefreshToken(UserDetails userDetails) {
+        return generateToken(userDetails, "refresh", jwtProperties.getRefreshTokenExpiration());
+    }
+
+    public boolean isRefreshToken(String token) {
+        return "refresh".equals(extractClaims(token).get("token_type", String.class));
+    }
+
+    private String generateToken(UserDetails userDetails, String tokenType, long expirationInSeconds) {
         Instant now = Instant.now();
-        Instant expiration = now.plusSeconds(jwtProperties.getAccessTokenExpiration());
+        Instant expiration = now.plusSeconds(expirationInSeconds);
 
         return Jwts.builder()
                 .subject(userDetails.getUsername())
+                .claim("token_type", tokenType)
                 .issuedAt(Date.from(now))
                 .expiration(Date.from(expiration))
                 .signWith(signingKey)
@@ -39,7 +52,8 @@ public class JwtService {
     }
 
     public boolean isTokenValid(String token, UserDetails userDetails) {
-        return extractUsername(token).equals(userDetails.getUsername())
+        return !isRefreshToken(token)
+                && extractUsername(token).equals(userDetails.getUsername())
                 && userDetails.isEnabled();
     }
 

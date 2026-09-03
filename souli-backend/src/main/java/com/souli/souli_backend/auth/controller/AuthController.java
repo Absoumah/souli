@@ -3,6 +3,7 @@ package com.souli.souli_backend.auth.controller;
 import com.souli.souli_backend.auth.dto.AuthResponseDto;
 import com.souli.souli_backend.auth.dto.LoginRequestDto;
 import com.souli.souli_backend.auth.dto.RegisterRequestDto;
+import com.souli.souli_backend.auth.dto.RefreshTokenRequestDto;
 import com.souli.souli_backend.auth.service.AuthService;
 import com.souli.souli_backend.common.dto.ApiResponseDto;
 import com.souli.souli_backend.users.domain.dto.UserDto;
@@ -45,6 +46,20 @@ public class AuthController {
         ApiResponseDto<AuthResponseDto> response = new ApiResponseDto<>(
                 HttpStatus.OK.value(),
                 "Connexion réussie",
+                authentication
+        );
+
+        return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/refresh")
+    public ResponseEntity<ApiResponseDto<AuthResponseDto>> refresh(
+            @RequestBody RefreshTokenRequestDto request
+    ) {
+        AuthResponseDto authentication = authService.refresh(request);
+        ApiResponseDto<AuthResponseDto> response = new ApiResponseDto<>(
+                HttpStatus.OK.value(),
+                "Token renouvelé avec succès",
                 authentication
         );
 
