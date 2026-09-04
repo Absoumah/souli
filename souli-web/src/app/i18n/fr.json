@@ -1,0 +1,93 @@
+{
+  "brand": { "name": "Souli", "initial": "S" },
+  "navigation": {
+    "mainAria": "Navigation principale",
+    "home": "Accueil",
+    "fields": "Terrains",
+    "howItWorks": "Comment ça marche",
+    "benefits": "Nos avantages",
+    "login": "Se connecter",
+    "signup": "S'inscrire"
+  },
+  "hero": {
+    "eyebrow": "Le football, simplement",
+    "titleFirst": "Le prochain match",
+    "titleSecond": "commence ici.",
+    "description": "Trouvez un terrain, rejoignez une équipe et partagez votre passion du football, près de chez vous.",
+    "searchAria": "Rechercher un terrain",
+    "locationLabel": "Où jouer ?",
+    "defaultLocation": "votre ville",
+    "locationPlaceholder": "Ville ou code postal",
+    "typeLabel": "Type de match",
+    "fiveAside": "Football à 5",
+    "sevenAside": "Football à 7",
+    "elevenAside": "Football à 11",
+    "search": "Rechercher",
+    "searchMessage": "Recherche des terrains disponibles à {{location}}…",
+    "playersCount": "+ 2 500",
+    "playersLabel": "joueurs actifs",
+    "openMatches": "Matchs ouverts",
+    "today": "aujourd'hui",
+    "playTogether": "JOUER ENSEMBLE",
+    "discover": "Découvrir Souli"
+  },
+  "stats": {
+    "ariaLabel": "Chiffres clés",
+    "intro": "Déjà adopté par les passionnés",
+    "players": "joueurs",
+    "fields": "terrains partenaires",
+    "matches": "matchs organisés"
+  },
+  "benefits": {
+    "eyebrow": "Tout ce qu'il vous faut",
+    "titleFirst": "Le jeu est meilleur",
+    "titleSecond": "quand on le partage.",
+    "findTitle": "Trouvez votre terrain",
+    "findDescription": "Réservez le terrain idéal, au bon moment et au meilleur prix.",
+    "createTitle": "Créez votre match",
+    "createDescription": "Organisez une partie en quelques clics et invitez vos amis.",
+    "joinTitle": "Rejoignez la communauté",
+    "joinDescription": "Rencontrez de nouveaux joueurs et ne manquez plus jamais un match."
+  },
+  "steps": {
+    "eyebrow": "Simple comme une passe",
+    "titleFirst": "Votre match en",
+    "titleSecond": "3 étapes.",
+    "chooseTitle": "Choisissez",
+    "chooseDescription": "Un terrain et un créneau près de chez vous.",
+    "organizeTitle": "Organisez",
+    "organizeDescription": "Créez votre match et rassemblez votre équipe.",
+    "playTitle": "Jouez",
+    "playDescription": "Profitez du match. Le reste, c'est du plaisir."
+  },
+  "auth": {
+    "backHome": "Retour à l'accueil",
+    "brandEyebrow": "La communauté Souli",
+    "brandTitleFirst": "Le football",
+    "brandTitleSecond": "nous rassemble.",
+    "brandDescription": "Créez votre compte et rejoignez les joueurs qui font vivre leur passion, match après match.",
+    "email": "Adresse e-mail",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "signup": "Créer un compte",
+    "loginLink": "Se connecter",
+    "login": {
+      "eyebrow": "Bon retour",
+      "title": "Se connecter",
+      "description": "Retrouvez vos matchs et votre équipe.",
+      "submit": "Se connecter",
+      "pending": "La connexion sera bientôt disponible.",
+      "noAccount": "Pas encore de compte ?"
+    },
+    "register": {
+      "eyebrow": "Rejoignez Souli",
+      "title": "Créer un compte",
+      "description": "Quelques informations suffisent pour commencer à jouer.",
+      "submit": "Créer mon compte",
+      "pending": "La création de compte sera bientôt disponible.",
+      "hasAccount": "Vous avez déjà un compte ?"
+    }
+  }
+}

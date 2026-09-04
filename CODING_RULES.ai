@@ -1,0 +1,52 @@
+# Règles de codage — Souli
+
+Ce fichier regroupe les règles exprimées pour le développement de Souli.
+
+## Maintenance des règles
+
+- Toute nouvelle règle de codage communiquée doit être ajoutée dans ce fichier.
+- Les règles front-end et back-end doivent rester séparées dans leurs sections respectives.
+- Expliquer les choix de développement, de conception et d'architecture effectués lors des modifications.
+
+## Front-end
+
+### Identité
+
+- Utiliser « Souli » comme nom affiché dans l'interface.
+- Ne plus afficher « Footbook » dans les textes de l'interface.
+
+### Traductions et i18n
+
+- Ne pas écrire les textes métier directement dans les templates HTML.
+- Centraliser les traductions dans des fichiers JSON de langue, par exemple `i18n/fr.json`.
+- Utiliser `@ngx-translate/core`.
+- Utiliser le pipe officiel `translate` dans les templates : `{{ 'navigation.login' | translate }}`.
+- Utiliser `TranslateService` pour les traductions dynamiques et les paramètres d'interpolation.
+- Préférer l'injection fonctionnelle Angular : `private readonly translate = inject(TranslateService);`.
+- Conserver les clés de traduction organisées par domaine fonctionnel (`navigation`, `hero`, `stats`, etc.).
+- Ajouter toute nouvelle traduction dans les fichiers JSON plutôt que dans le HTML ou le TypeScript.
+
+### HTML et styles
+
+- Garder dans les templates uniquement la structure, les attributs Angular et les clés de traduction.
+- Réduire au maximum les styles et attributs de présentation directement dans le HTML.
+- Écrire les styles dans le fichier SCSS du composant.
+- Écrire les propriétés de chaque classe SCSS sur des lignes séparées et alignées en colonne, jamais sur une seule ligne.
+- Utiliser des noms de classes explicites, descriptifs et liés au composant concerné.
+- Utiliser `styles.scss` uniquement pour les styles globaux.
+- Prévoir un rendu responsive pour les composants de page.
+- Après chaque directive de contrôle Angular (`@if`, `@else`, `@for`, etc.), placer l'accolade ouvrante sur la ligne suivante et indenter le contenu sur les lignes suivantes.
+- Nommer les composants selon le domaine ou la marque fonctionnelle concernée ; le composant de page d'accueil se nomme `SouliComponent`.
+- Organiser les fonctionnalités front dans `features` ; `auth` est un répertoire fonctionnel qui regroupe les composants `login` et `register`, pas un composant Angular.
+- Pour éviter de répéter les préfixes i18n communs dans les templates, définir une clé de base comme `readonly tKey = 'auth'` dans le composant et construire les clés avec `tKey`.
+- Utiliser un `FormGroup` nommé `form` pour les formulaires réactifs et relier les champs HTML avec `formControlName`.
+
+## Back-end
+
+- Séparer les responsabilités entre contrôleurs, services, repositories, DTO et mappers.
+- Ne pas placer de logique métier dans les contrôleurs.
+- Utiliser les DTO pour les échanges API plutôt que d'exposer directement les entités.
+- Centraliser la gestion des erreurs via le mécanisme d'exception global.
+- Respecter la structure et les conventions existantes du projet Spring Boot.
+- Conserver les paramètres d'environnement et les URLs de services dans la configuration, jamais en dur dans la logique métier.
+- Protéger les endpoints selon les rôles et le mécanisme d'authentification existants.

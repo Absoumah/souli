@@ -1,0 +1,15 @@
+<div class="auth-card">
+  <a class="auth-back-link" routerLink="/">← {{ tKey + '.backHome' | translate }}</a>
+  <p class="auth-form-eyebrow">{{ tKey + '.login.eyebrow' | translate }}</p>
+  <h2>{{ tKey + '.login.title' | translate }}</h2>
+  <p class="auth-form-description">{{ tKey + '.login.description' | translate }}</p>
+  <form (ngSubmit)="submit()">
+    <label>{{ tKey + '.email' | translate }}<input type="email" name="email" [(ngModel)]="email" required autocomplete="email" /></label>
+    <label>{{ tKey + '.password' | translate }}<input type="password" name="password" [(ngModel)]="password" required autocomplete="current-password" /></label>
+    <button type="submit">{{ tKey + '.login.submit' | translate }}</button>
+  </form>
+  @if (submitted) {
+    <p class="auth-feedback" role="status">{{ tKey + '.login.pending' | translate }}</p>
+  }
+  <p class="auth-switch">{{ tKey + '.login.noAccount' | translate }} <a routerLink="/auth/register">{{ tKey + '.signup' | translate }}</a></p>
+</div>

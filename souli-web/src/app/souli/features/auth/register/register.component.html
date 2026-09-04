@@ -1,0 +1,27 @@
+<div class="auth-card">
+  <a class="auth-back-link" routerLink="/">← {{ tKey + '.backHome' | translate }}</a>
+  <p class="auth-form-eyebrow">{{ tKey + '.register.eyebrow' | translate }}</p>
+  <h2>{{ tKey + '.register.title' | translate }}</h2>
+  <p class="auth-form-description">{{ tKey + '.register.description' | translate }}</p>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="auth-name-fields">
+      <label>{{ tKey + '.firstName' | translate }}
+        <input type="text" formControlName="firstName" autocomplete="given-name" />
+      </label>
+      <label>{{ tKey + '.lastName' | translate }}
+        <input type="text" formControlName="lastName" autocomplete="family-name" />
+      </label>
+    </div>
+    <label>{{ tKey + '.email' | translate }}
+      <input type="email" formControlName="email" autocomplete="email" />
+    </label>
+    <label>{{ tKey + '.password' | translate }}
+      <input type="password" formControlName="password" autocomplete="new-password" />
+    </label>
+    <label>{{ tKey + '.confirmPassword' | translate }}
+      <input type="password" formControlName="confirmPassword" autocomplete="new-password" />
+    </label>
+    <button type="submit" [disabled]="form.invalid">{{ tKey + '.register.submit' | translate }}</button>
+  </form>
+  <p class="auth-switch">{{ tKey + '.register.hasAccount' | translate }} <a routerLink="/auth/login">{{ tKey + '.loginLink' | translate }}</a></p>
+</div>

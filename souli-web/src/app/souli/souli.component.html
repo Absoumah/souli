@@ -1,0 +1,29 @@
+<main>
+  <section class="souli-hero" id="accueil">
+    <nav class="souli-navigation" [attr.aria-label]="'navigation.mainAria' | translate">
+      <a class="souli-brand" href="#accueil" [attr.aria-label]="('brand.name' | translate) + ', ' + ('navigation.home' | translate)">
+        <span class="souli-brand-mark">{{ 'brand.initial' | translate }}</span><span>{{ 'brand.name' | translate }}</span>
+      </a>
+      <div class="souli-nav-links"><a href="#terrains">{{ 'navigation.fields' | translate }}</a><a href="#fonctionnement">{{ 'navigation.howItWorks' | translate }}</a><a href="#avantages">{{ 'navigation.benefits' | translate }}</a></div>
+      <div class="souli-nav-actions"><a class="souli-login-link" routerLink="/auth/login">{{ 'navigation.login' | translate }}</a><a class="souli-button souli-button-small souli-button-light" routerLink="/auth/register">{{ 'navigation.signup' | translate }}</a></div>
+    </nav>
+    <div class="souli-hero-content">
+      <div class="souli-hero-copy">
+        <p class="souli-eyebrow"><span class="souli-eyebrow-dot"></span>{{ 'hero.eyebrow' | translate }}</p>
+        <h1>{{ 'hero.titleFirst' | translate }}<br /><em>{{ 'hero.titleSecond' | translate }}</em></h1>
+        <p class="souli-hero-description">{{ 'hero.description' | translate }}</p>
+        <form class="souli-search-card" (ngSubmit)="searchFields()" [attr.aria-label]="'hero.searchAria' | translate">
+          <label class="souli-search-field"><span class="souli-field-icon" aria-hidden="true">⌖</span><span><small>{{ 'hero.locationLabel' | translate }}</small><input [(ngModel)]="city" name="city" [placeholder]="'hero.locationPlaceholder' | translate" /></span></label>
+          <label class="souli-search-field souli-search-type"><span class="souli-field-icon" aria-hidden="true">⚽</span><span><small>{{ 'hero.typeLabel' | translate }}</small><select [(ngModel)]="matchType" name="matchType"><option value="5v5">{{ 'hero.fiveAside' | translate }}</option><option value="7v7">{{ 'hero.sevenAside' | translate }}</option><option value="11v11">{{ 'hero.elevenAside' | translate }}</option></select></span></label>
+          <button class="souli-button souli-button-search" type="submit">{{ 'hero.search' | translate }} <span>→</span></button>
+        </form>
+        @if (searchMessageKey) { <p class="souli-search-message" role="status">{{ searchMessageKey | translate: searchMessageParams }}</p> }
+      </div>
+      <div class="souli-hero-visual" [attr.aria-label]="'hero.playTogether' | translate"><div class="souli-visual-glow"></div><div class="souli-player-circle"><span class="souli-player-number">10</span><span class="souli-player-label">{{ 'hero.playTogether' | translate }}</span></div><div class="souli-visual-card souli-visual-card-top"><strong>{{ 'hero.playersCount' | translate }}</strong><span>{{ 'hero.playersLabel' | translate }}</span></div><div class="souli-visual-card souli-visual-card-bottom"><span class="souli-status-dot"></span><span>{{ 'hero.openMatches' | translate }}<br /><strong>{{ 'hero.today' | translate }}</strong></span></div></div>
+    </div>
+    <div class="souli-hero-scroll"><span></span>{{ 'hero.discover' | translate }}</div>
+  </section>
+  <section class="souli-trusted" [attr.aria-label]="'stats.ariaLabel' | translate"><p>{{ 'stats.intro' | translate }}</p><div class="souli-stats"><span><strong>2 500+</strong> {{ 'stats.players' | translate }}</span><span><strong>180+</strong> {{ 'stats.fields' | translate }}</span><span><strong>12 000+</strong> {{ 'stats.matches' | translate }}</span></div></section>
+  <section class="souli-features" id="avantages"><div class="souli-section-heading"><p class="souli-eyebrow">{{ 'benefits.eyebrow' | translate }}</p><h2>{{ 'benefits.titleFirst' | translate }}<br /><em>{{ 'benefits.titleSecond' | translate }}</em></h2></div><div class="souli-feature-grid" id="terrains"><article class="souli-feature-card"><span class="souli-feature-icon">⌖</span><h3>{{ 'benefits.findTitle' | translate }}</h3><p>{{ 'benefits.findDescription' | translate }}</p></article><article class="souli-feature-card"><span class="souli-feature-icon">◎</span><h3>{{ 'benefits.createTitle' | translate }}</h3><p>{{ 'benefits.createDescription' | translate }}</p></article><article class="souli-feature-card"><span class="souli-feature-icon">↗</span><h3>{{ 'benefits.joinTitle' | translate }}</h3><p>{{ 'benefits.joinDescription' | translate }}</p></article></div></section>
+  <section class="souli-steps" id="fonctionnement"><div><p class="souli-eyebrow">{{ 'steps.eyebrow' | translate }}</p><h2>{{ 'steps.titleFirst' | translate }}<br /><em>{{ 'steps.titleSecond' | translate }}</em></h2></div><div class="souli-step-list"><div class="souli-step"><span>01</span><div><h3>{{ 'steps.chooseTitle' | translate }}</h3><p>{{ 'steps.chooseDescription' | translate }}</p></div></div><div class="souli-step"><span>02</span><div><h3>{{ 'steps.organizeTitle' | translate }}</h3><p>{{ 'steps.organizeDescription' | translate }}</p></div></div><div class="souli-step"><span>03</span><div><h3>{{ 'steps.playTitle' | translate }}</h3><p>{{ 'steps.playDescription' | translate }}</p></div></div></div></section>
+</main>
