@@ -1,4 +1,13 @@
 {
+  "common": {
+    "actions": {
+      "close": "Fermer"
+    },
+    "feedback": {
+      "success": "Opération réalisée avec succès.",
+      "error": "Une erreur est survenue. Veuillez réessayer."
+    }
+  },
   "brand": { "name": "Souli", "initial": "S" },
   "navigation": {
     "mainAria": "Navigation principale",
@@ -73,6 +82,12 @@
     "lastName": "Nom",
     "signup": "Créer un compte",
     "loginLink": "Se connecter",
+    "errors": {
+      "required": "Ce champ est obligatoire.",
+      "email": "Veuillez saisir une adresse e-mail valide.",
+      "passwordLength": "Le mot de passe doit contenir au moins 8 caractères.",
+      "passwordMismatch": "Les mots de passe ne correspondent pas."
+    },
     "login": {
       "eyebrow": "Bon retour",
       "title": "Se connecter",

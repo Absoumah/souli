@@ -32,6 +32,7 @@ Ce fichier regroupe les règles exprimées pour le développement de Souli.
 - Réduire au maximum les styles et attributs de présentation directement dans le HTML.
 - Écrire les styles dans le fichier SCSS du composant.
 - Écrire les propriétés de chaque classe SCSS sur des lignes séparées et alignées en colonne, jamais sur une seule ligne.
+- Centraliser les règles CSS générales et réutilisables dans des fichiers de mixins SCSS placés dans `src/styles`, puis les inclure dans les composants concernés.
 - Utiliser des noms de classes explicites, descriptifs et liés au composant concerné.
 - Utiliser `styles.scss` uniquement pour les styles globaux.
 - Prévoir un rendu responsive pour les composants de page.
