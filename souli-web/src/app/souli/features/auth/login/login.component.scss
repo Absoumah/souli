@@ -1,0 +1,3 @@
+@use '../../../../../styles/mixins' as app;
+
+@include app.auth-form-layout(430px, 58px);

@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: 'Trebuchet MS', Arial, sans-serif; background: #fbfdf9; }
+
+.snackbar-error .mdc-snackbar__surface {
+  background-color: #b3261e;
+}
+
+.snackbar-success .mdc-snackbar__surface {
+  background-color: #2e7d32;
+}
+
+.snackbar-error .mdc-snackbar__label,
+.snackbar-success .mdc-snackbar__label,
+.snackbar-error .mat-mdc-snack-bar-action,
+.snackbar-success .mat-mdc-snack-bar-action {
+  color: #ffffff;
+}

@@ -1,0 +1,15 @@
+@use '../../../../../styles/mixins' as app;
+
+@include app.auth-form-layout(500px, 34px);
+
+.auth-name-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 520px) {
+  .auth-name-fields {
+    grid-template-columns: 1fr;
+  }
+}

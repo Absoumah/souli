@@ -1,0 +1,79 @@
+@mixin auth-form-layout($max-width, $eyebrow-margin) {
+  :host {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    width: min(100%, $max-width);
+    margin-inline: auto;
+    padding: 24px;
+  }
+
+  .auth-card {
+    width: 100%;
+  }
+
+  .auth-back-link,
+  .auth-switch a {
+    color: #628633;
+    font-size: 0.78rem;
+    text-decoration: none;
+  }
+
+  .auth-back-link:hover,
+  .auth-switch a:hover {
+    text-decoration: underline;
+  }
+
+  .auth-form-eyebrow {
+    margin: $eyebrow-margin 0 12px;
+    color: #729842;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .auth-card h2 {
+    margin: 0 0 12px;
+    color: #143d29;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    letter-spacing: -0.06em;
+  }
+
+  .auth-form-description,
+  .auth-switch {
+    color: #708078;
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  .auth-card form {
+    display: grid;
+    gap: 18px;
+    margin-top: 30px;
+  }
+
+  .auth-card mat-form-field {
+    width: 100%;
+  }
+
+  .auth-card button {
+    width: 100%;
+    min-height: 48px;
+    border-radius: 6px;
+    background-color: #a4da3c;
+    color: #143d29;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .auth-feedback {
+    color: #628633;
+    font-size: 0.8rem;
+  }
+
+  .auth-switch {
+    margin-top: 24px;
+  }
+}
